@@ -1,2 +1,2 @@
 # Black280197.github.io
-Web đọc thông báo từ ngân hàng thành lời nói
+Ai chiến thắng mà chưa từng chiến bại, ai nên khôn mà chẳng dại đôi lần!
