@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chặng đường nào trải bước trên hoa hồng !</title>
+    
+
+</head>
+<body>
+    
+</body>
+<script type="module">
+    const FIREBASE_VERSION = "10.13.1";
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js';
+    import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore-lite.js';
+    const firebaseConfig = {
+    apiKey: "AIzaSyCz7Ev2arYz2MknkAG1LHNyx3PM_1kh1ZE",
+    authDomain: "appformom-d49e8.firebaseapp.com",
+    projectId: "appformom-d49e8",
+    storageBucket: "appformom-d49e8.appspot.com",
+    messagingSenderId: "386765130646",
+    appId: "1:386765130646:web:66a9a6093a8013c90debb7"
+};
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Get a list of cities from your database
+    async function getCities(db) {
+    const citiesCol = collection(db, 'messages');
+    const citySnapshot = await getDocs(citiesCol);
+    const cityList = citySnapshot.docs.map(doc => doc.data());
+    return cityList;
+    }
+    console.log(await getCities(db))
+</script>
+  
+
+
+</html>
